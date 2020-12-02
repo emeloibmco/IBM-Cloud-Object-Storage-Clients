@@ -33,7 +33,8 @@ Para la instalación se accederá a la terminal y se ingrsarán el siguiente com
 Luego de ello se deberá crear un archivo de texto sin extensión con las credenciales HMAC de la siguiente manera:
 
 credentials_file
-|-----<access_key>:<secret_key>
+|
+|----- <access_key>:<secret_key>
 
 Y se le agregan permisos de lectura y escritura con el siguiente comando:
 ```
