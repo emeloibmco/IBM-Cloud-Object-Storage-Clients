@@ -42,8 +42,8 @@ Y se le agregan permisos de lectura y escritura con el siguiente comando:
 
 Finalmente se debe realizar la configuración, sin embargo la ejecución del comando se debe direccionar hacia una carpeta totalmente vacia con los siguientes comandos:
 ```
-    mkdir **<New_Folder>**
-    s3fs <bucket_name> **./New_Folder** -o url=http{s}://<endpoint> –o passwd_file=<credentials_file>
+    mkdir <New_Folder>
+    s3fs <bucket_name> ./<New_Folder>  -o url=http{s}://<endpoint> –o passwd_file=<credentials_file>
 ```
 
 ## 3. Configuración de máquina virtual con SO Windows
