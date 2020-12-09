@@ -8,7 +8,6 @@ Para la configuación de un cliente COS se debe tener en cuenta el sistema opera
 
 1. Aprovisionamiento de Cloud-Object-Storage
 2. Configuración de máquina virtual con SO Linux Ubuntu
-3. Configuración de máquina virtual con SO Windows
 
 ## 1. Aprovisionamiento de Cloud-Object-Storage
 Para el aprovisionamiento del Cloud Object Storage y Bucket se requiere del acceso a la plataforma de IBM Cloud y al catalogo del mismo.
@@ -46,5 +45,9 @@ Finalmente se debe realizar la configuración, sin embargo la ejecución del com
     mkdir <New_Folder>
     s3fs <bucket_name> ./<New_Folder>  -o url=http{s}://<endpoint> –o passwd_file=<credentials_file>
 ```
+<img width="800" alt="final" src="Assets/final.gif">
 
-## 3. Configuración de máquina virtual con SO Windows
+Con ello se observa que la carpeta aparece con archivos aunque no los tenía sin embargo para entender como funciona el Client COS se deberá subir un archivo desde la máquina en la cual se configuró y de igual manera directamente en la consola de IBM Cloud como se muestra a continuación:
+
+<img width="800" alt="prueba" src="Assets/prueba.gif">
+
