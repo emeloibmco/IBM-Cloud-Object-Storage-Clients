@@ -49,5 +49,5 @@ Finalmente se debe realizar la configuración, sin embargo la ejecución del com
 
 Con ello se observa que la carpeta aparece con archivos aunque no los tenía sin embargo para entender como funciona el Client COS se deberá subir un archivo desde la máquina en la cual se configuró y de igual manera directamente en la consola de IBM Cloud como se muestra a continuación:
 
-<img width="800" alt="prueba" src="Assets/prueba.gif">
+<img width="1200" alt="prueba" src="Assets/prueba.gif">
 
