@@ -6,7 +6,7 @@ Para la configuación de un cliente COS se debe tener en cuenta el sistema opera
 
 ## Contenido 
 
-Aprovisionamiento de ICOS Cloud-Object-Storage
+[Aprovisionamiento de ICOS Cloud-Object-Storage](#aprovisionamiento-de-cloud-object-storage)
 
 [Opción 1 - conexión por Ubuntu](#opción-1---conexión-por-ubuntu)
 
