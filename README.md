@@ -72,8 +72,15 @@ Con ello se observa que la carpeta aparece con archivos aunque no los tenía, si
 A continuación se muestran los pasos a seguir para realizar la conexión del servicio ICOS desde un disco virtual en un sistema operativo Microsoft Windows
 
 ## Creación de VSI en VPC
+
+**Creación de VPC**
+
 Ingrese a su cuenta de IBM Cloud, en el menú desplegable del costado izquierdo seleccione la opción *VPC infrastructure* y dentro de esta el ítem *VPCs*.
 Dé click en *Create*, seleccione la región y nombre para su VPC y finalmente seleccione *Create Virtual Private Cloud*.
+
+Ingrese a la VPC que acaba de crear y baje hasta la sección *Subnets in this VPC*, seleccione una de las subnets que se encuentran allí y copie la cadena de caracteres presentada en ```subnet ID```, esta se usará más adelante en la configuración de FileMage.
+
+**Generación de llaves SSH**
 
 Posteriormente para generar las llaves de acceso SSH ingrese a una terminal, ya sea IBM Cloud Shell o la terminal de su computador. Ingrese el siguiente comando:
 
@@ -90,9 +97,31 @@ A continuación regrese a su cuenta de IBM Cloud, en el menú de la izquierda d�
 
 <img width="800" alt="SSH key" src="/img/SSH.png">
 
+**Creación del servicio FileMage Gateway**
+
 Ingrese al catálogo de IBM Cloud y busque el servicio *FileMage Gateway*, asígnele un nombre, grupo de recursos y ubicación y dé click en *Install*
 
 <img width="800" alt="filemage" src="/img/filemage_catalogo.png">
+
+Luego de crear su servicio de Filemage diligencie la siguiente información:
+- **create_floating_ip**: true
+- **vsi_instance_name**: ingrese el nombre que desea asignar a la Virtual Server Instance (VSI) que se creará.
+- **vsi_security_group**: ingrese el nombre que sedea asignar al security group que se creará.
+-**region**: escriba el nombre de la región en la cual creó su VPC.
+-**ssh_key_name**: ingrese el nombre de la llave SSH que creó en IBM Cloud en el paso anterior.
+-**subnet_id**: ingrese la subnet_id que copió al momento de crear su VPC. Este ID también lo puede encontrar ingresando por el menú desplegable de la izquierda, sección *VPC Infrastructure*, opción *VPCs*, ingresando a la VPC correspondiente y posteriormente seleccionando una de las subnets.
+
+Finalmente, dé click en *Generate plan*
+
+<img width="800" alt="filemage" src="/img/schematics.png">
+
+Luego de que termina la creación del Filemage Schematics, dé click en *Apply plan*. Recuerde que debe tener los permisos adecuados para poder ejecutar el schematics.
+
+Puede verificar la adecuada ejeución del Schematics ingresando en el menú desplegable de la izquierda en la sección *VPC Infrastructure*, opción *Virtual Server Instances*. Acá debería ver creada una VSI con el nombre que asgnó al configurar el schematics. 
+
+<img width="800" alt="filemage" src="/img/VSI.png">
+
+Finalmente, ingrese a la VSI recién creada y copie la dirección IP flotante que se encuentra en la sección **network interfaces**, esta será la dirección que se usará para acceder al servicio de FileMage.
 
 ## Configuración de disco virtual con FileMage en Microsoft Windows 
 
