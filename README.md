@@ -6,20 +6,20 @@ Para la configuación de un cliente COS se debe tener en cuenta el sistema opera
 
 ## Contenido 
 
-[Aprovisionamiento de ICOS Cloud-Object-Storage](#aprovisionamiento-de-cloud-object-storage)
+1. [Aprovisionamiento de ICOS Cloud-Object-Storage](#aprovisionamiento-de-cloud-object-storage)
 
-[Opción 1 - conexión por Ubuntu](#opción-1---conexión-por-ubuntu)
+2. [Opción 1 - conexión por Ubuntu](#opción-1---conexión-por-ubuntu)
 
-1. [Configuración de máquina virtual con SO Linux Ubuntu](#configuración-de-máquina-virtual-con-so-linux-ubuntu)
+    1. [Configuración de máquina virtual con SO Linux Ubuntu](#configuración-de-máquina-virtual-con-so-linux-ubuntu)
 
-[Opción 2 - conexión por Windows](#opción-2---conexión-por-windows)
-1. [Creación de VSI en VPC](#creación-de-vsi-en-vpc)
-3. [Configuración de disco virtual con FileMage en Microsoft Windows](#configuración-de-disco-virtual-con-filemage-en-microsoft-windows)
-4. [RClone (pendiente)](#rclone)
+3. [Opción 2 - conexión por Windows](#opción-2---conexión-por-windows)
+   1. [Creación de VSI en VPC](#creación-de-vsi-en-vpc)
+   2. [Configuración de disco virtual con FileMage en Microsoft Windows](#configuración-de-disco-virtual-con-filemage-en-microsoft-windows)
+   3. [RClone (pendiente)](#rclone)
 
-[Referencias](#referencias)
+4. [Referencias](#referencias)
 
-[Autores](#autores-blacknib)
+5. [Autores](#autores-blacknib)
 
 ## Aprovisionamiento de Cloud-Object-Storage
 Para el aprovisionamiento del Cloud Object Storage y Bucket se requiere del acceso a la plataforma de IBM Cloud y al catálogo del mismo.
