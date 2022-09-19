@@ -6,10 +6,22 @@ Para la configuación de un cliente COS se debe tener en cuenta el sistema opera
 
 ## Contenido 
 
-1. Aprovisionamiento de Cloud-Object-Storage
-2. Configuración de máquina virtual con SO Linux Ubuntu
+Aprovisionamiento de ICOS Cloud-Object-Storage
 
-## 1. Aprovisionamiento de Cloud-Object-Storage
+[Opción 1 - conexión por Ubuntu](#opción-1---conexión-por-ubuntu)
+
+1. Configuración de máquina virtual con SO Linux Ubuntu
+
+[Opción 2 - conexión por Windows](#opción-2---conexión-por-windows)
+1. [Creación de VSI en VPC](#creación-de-vsi-en-vpc)
+3. [Configuración de disco virtual con FileMage en Microsoft Windows](#configuración-de-disco-virtual-con-filemage-en-microsoft-windows)
+4. [RClone (pendiente)](#rclone)
+
+[Referencias](#referencias)
+
+[Autores](#autores-blacknib)
+
+## Aprovisionamiento de Cloud-Object-Storage
 Para el aprovisionamiento del Cloud Object Storage y Bucket se requiere del acceso a la plataforma de IBM Cloud y al catalogo del mismo.
 Una vez allí busque el servicio de **object storage** y seleccionelo, se redirigirá a una pestaña para establecer los atributos necesarios los cuales serán; Nombre y Grupo de recursos.
 El procedimiento se muestra a continuación:
@@ -23,7 +35,9 @@ El proceso se muestra a continuación:
 Dentro del servicio se deberán configurar "Service Credentials" para generar autenticación a la hora de configurar el acceso a los buckets dentro de una máquina virtual. Estas credenciales deben ser creadas con HMAC keys las cuales configuran el **access key** y el **secret key** del COS
 <img width="800" alt="credentials" src="Assets/credentials.gif"> 
 
-## 2. Configuración de máquina virtual con SO Linux Ubuntu
+## Opción 1 - conexión por Ubuntu
+
+## Configuración de máquina virtual con SO Linux Ubuntu
 Para una máquina con sistema operativo de Linux versión Ubuntu se requiere de la instalación del programa s3fs para la gestión de archivos, sin emabrgo la conexión se direccionará directamente al bucket en vez de a todo el servicio de Cloud Object Storage
 Para la instalación se accederá a la terminal y se ingrsarán el siguiente comando:
 ```
@@ -51,3 +65,17 @@ Con ello se observa que la carpeta aparece con archivos aunque no los tenía sin
 
 <img width="1200" alt="prueba" src="Assets/prueba.gif">
 
+
+## Opción 2 - conexión por Windows
+
+## Creación de VSI en VPC
+
+## Configuración de disco virtual con FileMage en Microsoft Windows 
+
+## RClone
+
+## Referencias
+
+## Autores :black_nib:
+Equipo IBM Cloud Tech Sales Colombia.
+<br />
