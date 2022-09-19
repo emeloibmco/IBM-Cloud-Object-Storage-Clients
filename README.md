@@ -107,9 +107,9 @@ Luego de crear su servicio de Filemage diligencie la siguiente información:
 - **create_floating_ip**: true
 - **vsi_instance_name**: ingrese el nombre que desea asignar a la Virtual Server Instance (VSI) que se creará.
 - **vsi_security_group**: ingrese el nombre que sedea asignar al security group que se creará.
--**region**: escriba el nombre de la región en la cual creó su VPC.
--**ssh_key_name**: ingrese el nombre de la llave SSH que creó en IBM Cloud en el paso anterior.
--**subnet_id**: ingrese la subnet_id que copió al momento de crear su VPC. Este ID también lo puede encontrar ingresando por el menú desplegable de la izquierda, sección *VPC Infrastructure*, opción *VPCs*, ingresando a la VPC correspondiente y posteriormente seleccionando una de las subnets.
+-**region**: escriba el nombre de la región en la cual creó su VPC
+- **ssh_key_name**: ingrese el nombre de la llave SSH que creó en IBM Cloud en el paso anterior.
+- **subnet_id**: ingrese la subnet_id que copió al momento de crear su VPC. Este ID también lo puede encontrar ingresando por el menú desplegable de la izquierda, sección *VPC Infrastructure*, opción *VPCs*, ingresando a la VPC correspondiente y posteriormente seleccionando una de las subnets.
 
 Finalmente, dé click en *Generate plan*
 
@@ -117,7 +117,7 @@ Finalmente, dé click en *Generate plan*
 
 Luego de que termina la creación del Filemage Schematics, dé click en *Apply plan*. Recuerde que debe tener los permisos adecuados para poder ejecutar el schematics.
 
-Puede verificar la adecuada ejeución del Schematics ingresando en el menú desplegable de la izquierda en la sección *VPC Infrastructure*, opción *Virtual Server Instances*. Acá debería ver creada una VSI con el nombre que asgnó al configurar el schematics. 
+Puede verificar la adecuada ejeución del Schematics ingresando en el menú desplegable de la izquierda en la sección *VPC Infrastructure*, opción *Virtual Server Instances*. Acá debería ver creada una VSI con el nombre que asignó al configurar el schematics. 
 
 <img width="800" alt="filemage" src="/img/VSI.png">
 
