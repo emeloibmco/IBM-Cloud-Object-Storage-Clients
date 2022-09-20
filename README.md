@@ -143,43 +143,43 @@ rclone config
 ```
 2. Escriba el nombre que asignará a su nuevo remoto, por ejemplo ```rclone-demo```
 
-<img width="800" alt="rclone" src="/rclone/1name">
+<img width="800" alt="rclone" src="/rclone/1name.png">
 
 3. Seleccione el tipo de almacenamiento a configurar, en este caso ```5. IBM COS```
 
-<img width="800" alt="rclone" src="/rclone/2type">
+<img width="800" alt="rclone" src="/rclone/2type.png">
 
 4. Seleccione el proveedor del servicio, en este caso ```10. IBM COS S3```
 
-<img width="800" alt="rclone" src="/rclone/3provider">
+<img width="800" alt="rclone" src="/rclone/3provider.png">
 
 5. Seleccione la opción ```1``` para ingresar las credenciales del servicio
 
 6. Ingrese el **access key ID** y **secret access key** de su servicio de IBM Cloud Object Storage. Estas llaves las puede encontrar en su [instancia de Cloud Object Storage](https://cloud.ibm.com/objectstorage/), seleccionando *Service Credentials* en el menú de la izquierda
 
-<img width="800" alt="rclone" src="/rclone/4credentials">
+<img width="800" alt="rclone" src="/rclone/4credentials.png">
 
 7. Seleccione la opción ```1``` para ingresar la región del ICOS.
 
-<img width="800" alt="rclone" src="/rclone/5region">
+<img width="800" alt="rclone" src="/rclone/5region.png">
 
 8. Seleccione el endpoint correspondiente a la región que va a utilizar en sus buckets. En este caso, para us-east se ingresa el número ```9. US Region East Endpoint```
 
 9. Seleccione el tipo de servicio. En este caso se tiene un ICOS **Smart Tier**, por lo cual se selecciona la opción ```8. US East Region Flex```
 
-<img width="800" alt="rclone" src="/rclone/6endpoint">
+<img width="800" alt="rclone" src="/rclone/6endpoint.png">
 
 10. Seleccione la configuración de acceso ```2```
 
-<img width="800" alt="rclone" src="/rclone/7ACL">
+<img width="800" alt="rclone" src="/rclone/7ACL.png">
 
 11. Ingrese la letra ```n``` para dejar la configuración avanzada por defecto.
 
-<img width="800" alt="rclone" src="/rclone/8advanced">
+<img width="800" alt="rclone" src="/rclone/8advanced.png">
 
 12. Verifique la configuración mostrada y acéptela con la tecla ```y```
 
-<img width="800" alt="rclone" src="/rclone/9complete">
+<img width="800" alt="rclone" src="/rclone/9complete.png">
 
 En la documentación de RClone podrá encontrar los comandos de uso de la CLI, con los cuales podrá leer, editar y eliminar objetos en su instancia de ICOS.
 
@@ -188,7 +188,7 @@ Como ejemplo se presenta el comando para listar buckets:
 rclone lsd rclone-demo:
 ```
 
-<img width="800" alt="rclone" src="/rclone/10bucket">
+<img width="800" alt="rclone" src="/rclone/10bucket.png">
 
 ## Referencias
 
