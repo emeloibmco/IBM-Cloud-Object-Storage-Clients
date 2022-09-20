@@ -2,7 +2,7 @@
 
 _Instructivo de configuración para configuración de Cloud-Object-Storage en una VM como cliente_
 
-Para la configuación de un cliente COS se debe tener en cuenta el sistema operativo a configurar, por lo cual se divide en Linux y Windows
+En este repositorio se presentan 3 formas de configurar un cliente COS: Por el sistema operativo Linux Ubuntu, usando el servicio FileMage en Microsoft Windows, o con la CLI rclone independientemente del sistema operativo.
 
 ## Contenido 
 
@@ -15,11 +15,12 @@ Para la configuación de un cliente COS se debe tener en cuenta el sistema opera
 3. [Opción 2 - conexión por Windows](#opción-2---conexión-por-windows)
    1. [Creación de VSI en VPC](#creación-de-vsi-en-vpc)
    2. [Configuración de disco virtual con FileMage en Microsoft Windows](#configuración-de-disco-virtual-con-filemage-en-microsoft-windows)
-   3. [RClone (pendiente)](#rclone)
 
-4. [Referencias](#referencias)
+4. [Opción 3 - conexión por CLI RClone ](#opción-3---conexión-por-cli-rclone)
 
-5. [Autores](#autores-blacknib)
+5. [Referencias](#referencias)
+
+6. [Autores](#autores-blacknib)
 
 ## Aprovisionamiento de Cloud-Object-Storage
 Para el aprovisionamiento del Cloud Object Storage y Bucket se requiere del acceso a la plataforma de IBM Cloud y al catálogo del mismo.
@@ -125,11 +126,13 @@ Finalmente, ingrese a la VSI recién creada y copie la dirección IP flotante qu
 
 ## Configuración de disco virtual con FileMage en Microsoft Windows 
 
-## RClone
+## Opción 3 - conexión por CLI Rclone
 
 ## Referencias
 
 - [SSH Key](https://cloud.ibm.com/docs/vpc?topic=vpc-ssh-keys)
+- [RClone ICOS installation](https://rclone.org/s3/#ibm-cos-s3)
+- [RClone docs](https://rclone.org/docs/)
 
 ## Autores :black_nib:
 Equipo IBM Cloud Tech Sales Colombia.
