@@ -181,8 +181,7 @@ rclone config
 
 <img width="800" alt="rclone" src="/rclone/9complete.png">
 
-En la documentación de RClone podrá encontrar los comandos de uso de la CLI, con los cuales podrá leer, editar y eliminar objetos en su instancia de ICOS.
-
+13. En la documentación de RClone podrá encontrar los comandos de uso de la CLI, con los cuales podrá leer, editar y eliminar objetos en su instancia de ICOS.
 Como ejemplo se presenta el comando para listar buckets:
 ```
 rclone lsd rclone-demo:
@@ -190,11 +189,44 @@ rclone lsd rclone-demo:
 
 <img width="800" alt="rclone" src="/rclone/10bucket.png">
 
+14. Para facilitar el acceso a su bucket de ICOS, es posible instalar el servicio **Windows File System Proxy**, en una terminal de *PowerShell* en modo administrador con el comando
+```
+choco install winfsp -y
+```
+
+<img width="800" alt="rclone" src="/rclone/11winfsp.png">
+
+15. Para crear un nuevo network drive que corresponda al bucket configurado debe conocer el nombre del ```remote``` que configuró con rclone y el nombre del bucket en IBM Cloud, para esto puede usar el comando mostrado a continuación, donde ```rclone-demo``` es el nombre del remote que creó.
+
+```
+rclone lsd rclone-demo:
+```
+
+16. Ya conociendo los nombres del almacenamiento, puede crear el network drive con el comando:
+```
+rclone mount <nombre-del-remote>:<nombre-del-bucket-ICOS>/ S: --vfs-cache-mode full
+```
+
+Por ejemplo, en este caso sería:
+```
+rclone-demo:demo-icos-wdc/ S: --vfs-cache-mode full
+```
+<img width="800" alt="rclone" src="/rclone/12drive.png">
+
+17. Ya puede ingresar al network drive en su explorador de archivos y agregar, modificar o eliminar archivos. Los cambios que realice se actualizarán automáticamente en el bucket de IBM Cloud
+
+<img width="800" alt="rclone" src="/rclone/13ejemplo.png">
+
+Finalmente, a continuación se muestra la visualización de la implementación de Filemage y RClone en el explorador de archivos:
+
+<img width="800" alt="rclone" src="/rclone/final.png">
+
 ## Referencias
 
 - [SSH Key](https://cloud.ibm.com/docs/vpc?topic=vpc-ssh-keys)
 - [RClone ICOS installation](https://rclone.org/s3/#ibm-cos-s3)
 - [RClone docs](https://rclone.org/docs/)
+- [How to mount Amazon S3 as a drive](https://www.nakivo.com/blog/mount-amazon-s3-as-a-drive-how-to-guide/)
 
 ## Autores :black_nib:
 Equipo IBM Cloud Tech Sales Colombia.
