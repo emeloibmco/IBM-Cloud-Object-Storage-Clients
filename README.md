@@ -126,6 +126,71 @@ Finalmente, ingrese a la VSI recién creada y copie la dirección IP flotante qu
 
 ## Configuración de disco virtual con FileMage en Microsoft Windows 
 
+Para configurar el servidor de FileMage en Windows primero debera configurar el endpoint de ICOS, los usuarios y sus permisos correspondientes que tendrán sobre ICOS.
+
+Para esto ingresamos a FileMage usando la IP del paso anterior. Luego nos logueamos en FileMage usando nuestras credenciales.
+
+![image](img/loginFileMage.png)
+
+<h3>Registrar Endpoint COS</h3>
+
+Después debemos registrar el Endpoint del servicio ICOS esto con el fin de que FileMage pueda acceder directamente a nuestro cloud object storage. Para obtener el endpoint del servicio ingresamos a este [link](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints) y escogemos la opción **Direct** y luego seleccionamos el endpoint que corresponda a la zona donde se encuentra nuestro Object Storage, en este caso, **us-east**.
+
+![image](img/endpoint.png)
+
+Nos dirigimos al panel de control de FileMage y agregamos el endpoint utilizando las siguientes configuraciones
+
+![image](img/set-endpoint.png)
+
+Los valores de **API Key**, **HMAC Key Access Key Id** y **HMAC Secret Key** los podrá encontrar en IBM cloud ingresando a su COS y en el apartado de **Credenciales de servicio**. El **Enpoint Name** queda a su elección.
+
+![image](img/keys.png)
+
+Finalmente guarde los cambios de la configuración del endpoint.
+
+<h3>Registrar Usuario</h3>
+
+Luego en el panel de control de FileMage en el apartado de **Users** agregamos un usuario con los correspondientes permisos sobre ICOS.
+
+![image](img/AddUserFileMage.png)
+
+Configure las credenciales del usuario.
+
+![image](img/user-c.png)
+
+Luego los permisos que desea concederle al usuario
+
+![image](img/policie.png)
+
+Finalmente guarde los cambios de la configuración del usuario.
+
+<h3>Configurar el disco virtual en windows</h3>
+
+Ahora ya tenemos todo listo para configurar el servidor ftp como un disco virtual en Windows. Para lo anterior debemos usar la IP de la VSI donde esta FileMage y las credenciales del usuario que agregamos.
+
+Primero vamos al explorador de archivos de windows y nos dirigimos al apartado de **Este equipo** y click derecho en un espacio vácio luego seleccionamos la opción de **Agregar una ubicación de red**.
+
+![image](img/add.png)
+
+Luego seguimos las opciones del menu primero **Siguiente** luego **Elegir ubicación de red personalizada** y finalmente cuando se solicite la **Dirección de red o internet** ingresamos la siguiente cadena 
+
+```
+ftp://ip-de-la-vsi
+```
+![image](img/add-ftp-server.png)
+
+Después desmarcamos las opción de **Iniciar sesión de forma anónima** e ingresamos el usuario que creamos en el paso anterior.
+
+![image](img/user-ftp.png)
+
+Finalmente asignamos un nombre al disco virtual
+
+![image](img/config-ftp.png)
+
+Siguiendo estos pasos tendrá acceso desde un disco virtual en windows al servicio COS.
+
+![image](img/virtual-disk.png)
+
 ## Opción 3 - conexión por CLI Rclone
 
 Para la instalación de RClone CLI hay dos alternativas:
