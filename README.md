@@ -329,6 +329,7 @@ Finalmente, a continuación se muestra la visualización de la implementación d
 - [RClone ICOS installation](https://rclone.org/s3/#ibm-cos-s3)
 - [RClone docs](https://rclone.org/docs/)
 - [How to mount Amazon S3 as a drive](https://www.nakivo.com/blog/mount-amazon-s3-as-a-drive-how-to-guide/)
+- [FileMage](https://www.filemage.io/toc/)
 
 ## Autores :black_nib:
 Equipo IBM Cloud Tech Sales Colombia.
