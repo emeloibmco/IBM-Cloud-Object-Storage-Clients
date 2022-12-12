@@ -314,13 +314,14 @@ Esto creará una partición con la letra _S_, sin embargo puede usar la letra de
 18. Como un paso opcional, puede incluir un script que se ejecute automáticamente al encender el equipo. Para esto, incluya el archivo ```rclone-s3.cmd``` en la carpeta donde está trabajando, y modifique la segunda línea con el comando que utilizó en el paso **16**. 
 
 A continuación, presione **Windows + R** y en la ventana emergente que aparece ingrese el comando ```shell:startup```.
+
 <img width="400" alt="rclone" src="/rclone/startup.png">
 
 Esto abrirá una ubicación en el explorador de archivos con todo lo que se ejecuta cada que se enciende la máquina, inserte acá el archivo  ```script-start.cmd```, esto permitirá ejecutar en segundo plano los comandos necesarios para incluir la instancia de ICOS como un network drive adicional del equipo cada que este se encienda.
 
 Finalmente, a continuación se muestra la visualización de la implementación de Filemage y RClone en el explorador de archivos:
 
-<img width="800" alt="rclone" src="/rclone/final.png">
+<img width="600" alt="rclone" src="/rclone/final.png">
 
 ## Referencias
 
