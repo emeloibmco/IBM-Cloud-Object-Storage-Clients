@@ -1,0 +1,1 @@
+start /min cmd /c C:\Users\002558661\Documents\ejercicio-conexion-ICOS\rclone\rclone-s3.cmd

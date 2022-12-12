@@ -122,27 +122,47 @@ Puede verificar la adecuada ejeución del Schematics ingresando en el menú desp
 
 <img width="800" alt="filemage" src="/img/VSI.png">
 
+A continuación, ingrese a la VSI que acaba de crear. Para ello, ubíquese en una terminal en la carpeta donde generó las llaves SSH e incluya el siguiente comando:
+
+```
+ssh -i id_rsa root@<IP_FLOTANTE>
+```
+
+Una vez acceda a la VSI podrá actualizar la versión de Filemage con el comando 
+
+```
+sudo filemage update
+```
+
+Y también podrá crear la cuenta del usuario administrador ingresando el siguiente comando:
+
+```
+filemage init
+```
+
+Esto le permitirá generar un usuario y contraseña, con estas credenciales podrá iniciar sesión en la consola web de FileMage.
+
 Finalmente, ingrese a la VSI recién creada y copie la dirección IP flotante que se encuentra en la sección **network interfaces**, esta será la dirección que se usará para acceder al servicio de FileMage.
 
 ## Configuración de disco virtual con FileMage en Microsoft Windows 
 
-Para configurar el servidor de FileMage en Windows primero debera configurar el endpoint de ICOS, los usuarios y sus permisos correspondientes que tendrán sobre ICOS.
+Para configurar el servidor de FileMage en Windows primero deberá configurar el endpoint de ICOS, los usuarios y los permisos correspondientes que tendrán sobre ICOS.
 
-Para esto ingresamos a FileMage usando la IP del paso anterior. Luego nos logueamos en FileMage usando nuestras credenciales.
+Para esto ingrese a FileMage usando la IP del paso anterior. Luego haga log in en FileMage usando sus credenciales.
 
 ![image](img/loginFileMage.png)
 
 <h3>Registrar Endpoint COS</h3>
 
-Después debemos registrar el Endpoint del servicio ICOS esto con el fin de que FileMage pueda acceder directamente a nuestro cloud object storage. Para obtener el endpoint del servicio ingresamos a este [link](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints) y escogemos la opción **Direct** y luego seleccionamos el endpoint que corresponda a la zona donde se encuentra nuestro Object Storage, en este caso, **us-east**.
+Después debe registrar el Endpoint del servicio ICOS, esto con el fin de que FileMage pueda acceder directamente a su instancia cloud object storage. Para obtener el endpoint del servicio ingrese a este [link](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints) y escoja la opción **Direct**, seleccione el endpoint que corresponda a la zona donde se encuentra su Object Storage, en este caso para Washington corresponde a **us-east**.
 
 ![image](img/endpoint.png)
 
-Nos dirigimos al panel de control de FileMage y agregamos el endpoint utilizando las siguientes configuraciones
+Diríjase al panel de control de FileMage y agregue el endpoint utilizando las siguientes configuraciones:
 
 ![image](img/set-endpoint.png)
 
-Los valores de **API Key**, **HMAC Key Access Key Id** y **HMAC Secret Key** los podrá encontrar en IBM cloud ingresando a su COS y en el apartado de **Credenciales de servicio**. El **Enpoint Name** queda a su elección.
+Los valores de **API Key**, **HMAC Key Access Key Id** y **HMAC Secret Key** los podrá encontrar en IBM cloud ingresando a su COS y en el apartado de **Credenciales de servicio**. El **Endpoint Name** queda a su elección.
 
 ![image](img/keys.png)
 
@@ -150,7 +170,7 @@ Finalmente guarde los cambios de la configuración del endpoint.
 
 <h3>Registrar Usuario</h3>
 
-Luego en el panel de control de FileMage en el apartado de **Users** agregamos un usuario con los correspondientes permisos sobre ICOS.
+Luego, en el panel de control de FileMage, en el apartado de **Users** agregue un usuario con los correspondientes permisos sobre ICOS.
 
 ![image](img/AddUserFileMage.png)
 
@@ -166,24 +186,24 @@ Finalmente guarde los cambios de la configuración del usuario.
 
 <h3>Configurar el disco virtual en windows</h3>
 
-Ahora ya tenemos todo listo para configurar el servidor ftp como un disco virtual en Windows. Para lo anterior debemos usar la IP de la VSI donde esta FileMage y las credenciales del usuario que agregamos.
+Ahora ya tiene todo listo para configurar el servidor ftp como un disco virtual en Windows. Para lo anterior debe usar la IP Flotante de la VSI donde está FileMage y las credenciales del usuario que agregó.
 
-Primero vamos al explorador de archivos de windows y nos dirigimos al apartado de **Este equipo** y click derecho en un espacio vácio luego seleccionamos la opción de **Agregar una ubicación de red**.
+Primero diríjase al explorador de archivos de windows, en el apartado de **Este equipo** y dé click derecho en un espacio vacío, luego seleccione la opción de **Agregar una ubicación de red**.
 
 ![image](img/add.png)
 
-Luego seguimos las opciones del menu primero **Siguiente** luego **Elegir ubicación de red personalizada** y finalmente cuando se solicite la **Dirección de red o internet** ingresamos la siguiente cadena 
+Siga las opciones del menú: primero **Siguiente** luego **Elegir ubicación de red personalizada** y finalmente cuando se solicite la **Dirección de red o internet** ingrese la siguiente cadena:
 
 ```
-ftp://ip-de-la-vsi
+ftp://<IP_FLOTANTE>
 ```
 ![image](img/add-ftp-server.png)
 
-Después desmarcamos las opción de **Iniciar sesión de forma anónima** e ingresamos el usuario que creamos en el paso anterior.
+Después desmarque la opción de **Iniciar sesión de forma anónima** e ingrese el usuario que creó en el paso anterior.
 
 ![image](img/user-ftp.png)
 
-Finalmente asignamos un nombre al disco virtual
+Finalmente asigne un nombre al disco virtual
 
 ![image](img/config-ftp.png)
 
@@ -194,7 +214,7 @@ Siguiendo estos pasos tendrá acceso desde un disco virtual en windows al servic
 ## Opción 3 - conexión por CLI Rclone
 
 Para la instalación de RClone CLI hay dos alternativas:
-- Ingrese a [https://rclone.org/downloads/](https://rclone.org/downloads/) y descrague el ejecutable correspondiente a su máquina.
+- Ingrese a [https://rclone.org/downloads/](https://rclone.org/downloads/) y descargue el ejecutable correspondiente a su máquina.
 - Como alternativa, en una terminal ejecutada en modo administrador, por medio de la CLI [Chocolatey](https://chocolatey.org/install) ingrese el siguiente comando:
 ```
 choco install rclone 
@@ -246,7 +266,7 @@ rclone config
 
 <img width="800" alt="rclone" src="/rclone/9complete.png">
 
-13. En la documentación de RClone podrá encontrar los comandos de uso de la CLI, con los cuales podrá leer, editar y eliminar objetos en su instancia de ICOS.
+13. En la documentación de [RClone](https://rclone.org/docs/) podrá encontrar los comandos de uso de la CLI, con los cuales podrá leer, editar y eliminar objetos en su instancia de ICOS.
 Como ejemplo se presenta el comando para listar buckets:
 ```
 rclone lsd rclone-demo:
@@ -264,6 +284,12 @@ choco install winfsp -y
 15. Para crear un nuevo network drive que corresponda al bucket configurado debe conocer el nombre del ```remote``` que configuró con rclone y el nombre del bucket en IBM Cloud, para esto puede usar el comando mostrado a continuación, donde ```rclone-demo``` es el nombre del remote que creó.
 
 ```
+rclone lsd <nombre-del-remote>:
+```
+
+En este caso:
+
+```
 rclone lsd rclone-demo:
 ```
 
@@ -276,11 +302,21 @@ Por ejemplo, en este caso sería:
 ```
 rclone-demo:demo-icos-wdc/ S: --vfs-cache-mode full
 ```
+
+Esto creará una partición con la letra _S_, sin embargo puede usar la letra de su preferencia.
+
 <img width="800" alt="rclone" src="/rclone/12drive.png">
 
 17. Ya puede ingresar al network drive en su explorador de archivos y agregar, modificar o eliminar archivos. Los cambios que realice se actualizarán automáticamente en el bucket de IBM Cloud
 
 <img width="800" alt="rclone" src="/rclone/13ejemplo.png">
+
+18. Como un paso opcional, puede incluir un script que se ejecute automáticamente al encender el equipo. Para esto, incluya el archivo ```rclone-s3.cmd``` en la carpeta donde está trabajando, y modifique la segunda línea con el comando que utilizó en el paso **16**. 
+
+A continuación, presione **Windows + R** y en la ventana emergente que aparece ingrese el comando ```shell:startup```.
+<img width="400" alt="rclone" src="/rclone/startup.png">
+
+Esto abrirá una ubicación en el explorador de archivos con todo lo que se ejecuta cada que se enciende la máquina, inserte acá el archivo  ```script-start.cmd```, esto permitirá ejecutar en segundo plano los comandos necesarios para incluir la instancia de ICOS como un network drive adicional del equipo cada que este se encienda.
 
 Finalmente, a continuación se muestra la visualización de la implementación de Filemage y RClone en el explorador de archivos:
 
